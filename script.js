@@ -5,7 +5,9 @@ var hesapla_butonu = document.getElementById("hesapla");
 var girdi = document.getElementById("saniye_basina_deger");
 var girdigin_sayi = document.getElementById("girdigin_sayi");
 var kalan_sayi = document.getElementById("kalan_sayi");
-var kalan = document.getElementById("kalan");
+var kalan = document.getElementById("kalan_gun");
+var kalan_dakika = document.getElementById("kalan_dakika");
+var kalan_saat = document.getElementById("kalan_saat");
 
 saniye_basina_deger = girdi.value;
 var dakikada_toplam_deger = 0;
@@ -61,5 +63,10 @@ hesapla_butonu.addEventListener("click", function () {
 
   girdigin_sayi.innerHTML = Sayi_cevirme(saniye_basina_deger);
   kalan_gun_degeri = kalan_gun / gunde_toplam_deger;
+  kalan_saat_degeri = kalan_gun_degeri * 24;
+  kalan_dakika_degeri = kalan_saat_degeri * 60;
+
+  kalan_saat.innerHTML = `Kalan saat: ${kalan_saat_degeri.toFixed(0)}`;
+  kalan_dakika.innerHTML = `Kalan Dakika: ${kalan_dakika_degeri.toFixed(0)}`;
   kalan.innerHTML = `Kalan gün: ${parseInt(kalan_gun_degeri)}`;
 });
