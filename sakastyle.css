@@ -13,8 +13,8 @@
   align-items: center;
   margin: auto;
   padding: auto;
-  height: 740px;
-  width: 360px;
+  height: 100%;
+  width: 100%;
   background-image: url(resimler/arkaplan.jpg);
 }
 
