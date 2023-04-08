@@ -20,9 +20,9 @@ function Sayi_cevirme(num) {
   num = num.toString().replace(/[^0-9.]/g, "");
 
   let si = [
-    { v: 1, s: "FF" },
-    { v: 1e3, s: "GG" },
-    { v: 1e6, s: "HH" },
+    { v: 1, s: "DD" },
+    { v: 1e3, s: "EE" },
+    { v: 1e6, s: "FF" },
     { v: 1e9, s: "B" },
     { v: 1e12, s: "T" },
     { v: 1e15, s: "P" },
