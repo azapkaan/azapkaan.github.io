@@ -62,11 +62,12 @@ hesapla_butonu.addEventListener("click", function () {
   gunde.innerHTML = `Günde: ${Sayi_cevirme(gunde_toplam_deger)}`;
 
   girdigin_sayi.innerHTML = Sayi_cevirme(saniye_basina_deger);
-  kalan_gun_degeri = kalan_gun / gunde_toplam_deger;
-  kalan_saat_degeri = kalan_gun_degeri * 24;
-  kalan_dakika_degeri = kalan_saat_degeri * 60;
 
-  kalan_saat.innerHTML = `Kalan saat: ${kalan_saat_degeri.toFixed(0)}`;
-  kalan_dakika.innerHTML = `Kalan Dakika: ${kalan_dakika_degeri.toFixed(0)}`;
-  kalan.innerHTML = `Kalan gün: ${parseInt(kalan_gun_degeri)}`;
+  kalan_dakika_degeri = kalan_gun / dakikada_toplam_deger;
+  kalan_saat_degeri = kalan_gun / saatte_toplam_deger;
+  kalan_gun_degeri = kalan_gun / gunde_toplam_deger;
+
+  kalan_dakika.innerHTML = `Kalan Dakika: ${Math.floor(kalan_dakika_degeri)}`;
+  kalan_saat.innerHTML = `Kalan saat: ${Math.floor(kalan_saat_degeri)}`;
+  kalan.innerHTML = `Kalan gün: ${Math.floor(kalan_gun_degeri)}`;
 });
