@@ -9,11 +9,15 @@ var kalan = document.getElementById("kalan_gun");
 var kalan_dakika = document.getElementById("kalan_dakika");
 var kalan_saat = document.getElementById("kalan_saat");
 
-saniye_basina_deger = girdi.value;
+var saniye_basina_deger = girdi.value;
 var dakikada_toplam_deger = 0;
 var saatte_toplam_deger = 0;
 var gunde_toplam_deger = 0;
-var kalan_gun = kalan_sayi.value;
+
+function noktaKurtulma() {
+  kalan_gun = kalan_gun.replace(/\./g, "");
+  parseInt(kalan_gun);
+}
 
 ///sayi format
 function Sayi_cevirme(num) {
@@ -23,7 +27,7 @@ function Sayi_cevirme(num) {
     { v: 1, s: "FF" },
     { v: 1e3, s: "GG" },
     { v: 1e6, s: "HH" },
-    { v: 1e9, s: "HH" },
+    { v: 1e9, s: "II" },
     { v: 1e12, s: "T" },
     { v: 1e15, s: "P" },
     { v: 1e18, s: "E" },
@@ -48,6 +52,9 @@ girdi.addEventListener("change", (even) => {
 
 kalan_sayi.addEventListener("change", (event) => {
   kalan_gun = event.target.value;
+  noktaKurtulma();
+  //console.log(kalan_gun);
+  console.log(kalan_gun);
 });
 
 hesapla_butonu.addEventListener("click", function () {
